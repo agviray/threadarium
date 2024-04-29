@@ -83,6 +83,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'threadarium',
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PW'),
+        'HOST': env('HOST')
     }
 }
 
