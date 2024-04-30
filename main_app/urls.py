@@ -6,5 +6,6 @@ urlpatterns = [
   path('about/', views.about, name='about'),
   path('posts/', views.posts_index, name='index'),
   path('posts/<int:post_id>/', views.posts_detail, name='detail'),
+  path('posts/create/', views.PostCreate.as_view(), name='post_create'),
   path("__reload__/", include("django_browser_reload.urls")),
 ]
