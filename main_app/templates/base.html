@@ -9,16 +9,18 @@
     {% tailwind_css %}
     <script defer src="{% static 'js/script.js' %}"></script>
   </head>
-  <header>
-    <nav>
-      <div>
+  <header class="fixed top-0 left-0 right-0 w-full z-50">
+    <nav class="relative h-navbarHeight">
+      <div
+        class="relative flex justify-between items-center h-full px-4 lg:max-w-5xl lg:mx-auto"
+      >
         <div>
           <a href="/">
-            <span class="text-orange-400 text-xl">LOGO</span>
+            <span>LOGO</span>
           </a>
         </div>
         <div>
-          <ul>
+          <ul class="inline-flex items-center gap-4">
             <li>
               <a href="/"><span>Home</span></a>
             </li>
@@ -30,8 +32,12 @@
       </div>
     </nav>
   </header>
-  <body>
-    <main>{% block content %} {% endblock %}</main>
-    <footer><div></div></footer>
+  <body class="flex flex-col min-h-screen">
+    <main
+      class="flex-auto w-full p-4 pt-offsetNavbarHeight lg:max-w-5xl lg:mx-auto"
+    >
+      {% block content %} {% endblock %}
+    </main>
+    <footer><div class="p-4 text-center"></div></footer>
   </body>
 </html>
