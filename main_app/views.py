@@ -1,23 +1,5 @@
 from django.shortcuts import render
-
-posts = [
-  {
-    'title': 'Post One',
-    'body': 'This is post number 1'
-  },
-  {
-    'title': 'Post Two',
-    'body': 'This is post number 2'
-  },
-  {
-    'title': 'Post Three',
-    'body': 'This is post number 3'
-  },
-  {
-    'title': 'Post Four',
-    'body': 'This is post number 4'
-  },
-]
+from .models import Post
 
 # Create your views here.
 def home(request):
@@ -27,6 +9,8 @@ def about(request):
   return render(request, 'about.html')
 
 def posts_index(request):
+  posts = Post.objects.all()
+
   return render(request, 'posts/index.html', {
     'posts': posts
   })
