@@ -11,7 +11,7 @@
       type="text/css"
       href="{% static 'css/style.css' %}"
     />
-    <script src="{% static 'js/script.js' %}"></script>
+    <script defer src="{% static 'js/script.js' %}"></script>
   </head>
   <header>
     <nav>
@@ -36,5 +36,6 @@
   </header>
   <body>
     <main>{% block content %} {% endblock %}</main>
+    <footer><div></div></footer>
   </body>
 </html>

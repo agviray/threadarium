@@ -1,1 +1,8 @@
-console.log('hello world!');
+// CONSTANTS
+// -----------------------------
+const currentYear = new Date().getFullYear();
+
+// CACHED ELEMENT REFERENCES
+// -----------------------------
+const footerContent = document.querySelector('footer > div');
+footerContent.innerHTML = `&copy; ${currentYear} Finch Collector &nbsp;`;
