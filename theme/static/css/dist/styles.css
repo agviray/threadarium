@@ -749,6 +749,7 @@ select {
   --tw-contain-style:  ;
 }
 
+<<<<<<< HEAD
 .container {
   width: 100%;
 }
@@ -783,19 +784,25 @@ select {
   }
 }
 
+=======
+>>>>>>> test
 .static {
   position: static;
 }
 
+<<<<<<< HEAD
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
 }
 
+=======
+>>>>>>> test
 .block {
   display: block;
 }
 
+<<<<<<< HEAD
 .flex {
   display: flex;
 }
@@ -851,11 +858,14 @@ select {
   line-height: 1.75rem;
 }
 
+=======
+>>>>>>> test
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
 }
 
+<<<<<<< HEAD
 .leading-normal {
   line-height: 1.5;
 }
@@ -867,6 +877,16 @@ select {
 .text-blue-600 {
   --tw-text-opacity: 1;
   color: rgb(37 99 235 / var(--tw-text-opacity));
+=======
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-blue-400 {
+  --tw-text-opacity: 1;
+  color: rgb(96 165 250 / var(--tw-text-opacity));
+>>>>>>> test
 }
 
 .text-green-400 {
@@ -878,6 +898,7 @@ select {
   --tw-text-opacity: 1;
   color: rgb(251 146 60 / var(--tw-text-opacity));
 }
+<<<<<<< HEAD
 
 .text-red-400 {
   --tw-text-opacity: 1;
@@ -888,3 +909,5 @@ select {
   --tw-text-opacity: 1;
   color: rgb(96 165 250 / var(--tw-text-opacity));
 }
+=======
+>>>>>>> test
