@@ -15,20 +15,20 @@
         class="relative flex justify-between items-center h-full px-4 lg:max-w-5xl lg:mx-auto"
       >
         <div>
-          <a href="/">
+          <a href="{% url 'home' %}">
             <span>LOGO</span>
           </a>
         </div>
         <div>
           <ul class="inline-flex items-center gap-4">
             <li>
-              <a href="/"><span>Home</span></a>
+              <a href="{% url 'home' %}"><span>Home</span></a>
             </li>
             <li>
-              <a href="/about"><span>About</span></a>
+              <a href="{% url 'about' %}"><span>About</span></a>
             </li>
             <li>
-              <a href="/posts"><span>Posts</span></a>
+              <a href="{% url 'index' %}"><span>Posts</span></a>
             </li>
           </ul>
         </div>
