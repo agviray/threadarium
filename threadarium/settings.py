@@ -135,6 +135,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# Upon successful login, user will be redirected to this path.
+LOGIN_REDIRECT_URL = '/posts/'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
