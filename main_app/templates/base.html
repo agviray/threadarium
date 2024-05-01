@@ -27,12 +27,24 @@
             <li>
               <a href="{% url 'about' %}"><span>About</span></a>
             </li>
+            {% if user.is_authenticated %}
             <li>
               <a href="{% url 'index' %}"><span>Posts</span></a>
             </li>
             <li>
               <a href="{% url 'post_create' %}"><span>Create Post</span></a>
             </li>
+            <li>
+              <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit">Log Out</button>
+              </form>
+            </li>
+            {% else %}
+            <li>
+              <a href="{% url 'login' %}">Log In</a>
+            </li>
+            {% endif %}
           </ul>
         </div>
       </div>
