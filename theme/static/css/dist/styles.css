@@ -880,6 +880,11 @@ select {
   font-weight: 700;
 }
 
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
 @media (min-width: 1024px) {
   .lg\:mx-auto {
     margin-left: auto;
