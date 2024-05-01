@@ -23,7 +23,16 @@ def posts_detail(request, post_id):
 
 class PostCreate(CreateView):
   model = Post
-  fields = '__all__'
+  fields = ['title', 'body']
+
+  # This is an inherited method that will be called 
+  #  when a valid post form is being submitted.
+  def form_valid(self, form):
+    # Assign logged in user (self.request.user)
+    # Note: form.instance is the post
+    form.instance.user = self.request.user
+
+    return super().form_valid(form)
 
 class PostUpdate(UpdateView):
   model = Post
