@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Delete Post</h1>
+
+<p>
+  Are you sure you want to delete <span>{{ object.title }}</span>? This action
+  is irreversible.
+</p>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <div class="flex gap-4 pt-8">
+    <input
+      type="submit"
+      value="Yes, delete this post"
+      class="inline-block py-1 px-4 border border-black"
+    />
+    <a href="{% url 'detail' post.id %}"
+      ><span class="inline-block py-1 px-4 border border-black">Cancel</span></a
+    >
+  </div>
+</form>
+{% endblock %}

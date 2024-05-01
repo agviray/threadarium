@@ -1,17 +1,23 @@
 {% extends 'base.html' %} {% block content %}
 <section>
+  {% if object %}
+  <h1 class="font-bold">Editing {{ object.title }}</h1>
+  {% else %}
   <h1>Create Post</h1>
+  {% endif %}
   <div>
     <form action="" method="POST">
       {% csrf_token %}
       <table>
         {{ form.as_table }}
       </table>
-      <input
-        type="submit"
-        value="Submit"
-        class="py-1 px-4 border border-black"
-      />
+      <div class="flex gap-4 pt-8">
+        <input
+          type="submit"
+          value="Submit"
+          class="py-1 px-4 border border-black"
+        />
+      </div>
     </form>
   </div>
 </section>

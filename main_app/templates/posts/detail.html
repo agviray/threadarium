@@ -3,6 +3,14 @@
 <section>
   <h2>{{ post.title }}</h2>
   <p>{{ post.body }}</p>
+  <div class="flex gap-4 pt-8">
+    <a href="{% url 'post_update' post.id %}"
+      ><span class="inline-block py-1 px-4 border border-black">Edit</span></a
+    >
+    <a href="{% url 'post_delete' post.id %}"
+      ><span class="inline-block py-1 px-4 border border-black">Delete</span></a
+    >
+  </div>
 </section>
 
 {% endblock %}

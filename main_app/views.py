@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Post
 
 # Create your views here.
@@ -24,3 +24,11 @@ def posts_detail(request, post_id):
 class PostCreate(CreateView):
   model = Post
   fields = '__all__'
+
+class PostUpdate(UpdateView):
+  model = Post
+  fields = ['body']
+
+class PostDelete(DeleteView):
+  model = Post
+  success_url = '/posts'
