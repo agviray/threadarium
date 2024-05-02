@@ -45,6 +45,10 @@ def posts_detail(request, post_id):
 
   return render(request, 'posts/detail.html', {'post': post})
 
+@login_required
+def add_comment(request, post_id): 
+  return
+
 class PostCreate(LoginRequiredMixin, CreateView):
   model = Post
   fields = ['title', 'body']
