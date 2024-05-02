@@ -1,16 +1,29 @@
 {% extends 'base.html' %} {% block content %}
 
-<section>
-  <h2>{{ post.title }}</h2>
-  <p>{{ post.body }}</p>
-  <div class="flex gap-4 pt-8">
-    <a href="{% url 'post_update' post.id %}"
-      ><span class="inline-block py-1 px-4 border border-black">Edit</span></a
-    >
-    <a href="{% url 'post_delete' post.id %}"
-      ><span class="inline-block py-1 px-4 border border-black">Delete</span></a
-    >
-  </div>
-</section>
+<div>
+  <section>
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.body }}</p>
+    <div class="flex gap-4 pt-8">
+      <a href="{% url 'post_update' post.id %}"
+        ><span class="inline-block py-1 px-4 border border-black">Edit</span></a
+      >
+      <a href="{% url 'post_delete' post.id %}"
+        ><span class="inline-block py-1 px-4 border border-black"
+          >Delete</span
+        ></a
+      >
+    </div>
+  </section>
+  <section>
+    <form action="{% url 'add_comment' post.id %}" method="POST">
+      {% csrf_token %}
+      <textarea name="text" id="comment-body" cols="30" rows="10"></textarea>
+      <button type="submit" class="inline-block py-1 px-4 border border-black">
+        Add Comment
+      </button>
+    </form>
+  </section>
+</div>
 
 {% endblock %}
