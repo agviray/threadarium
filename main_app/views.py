@@ -33,6 +33,12 @@ def about(request):
   return render(request, 'about.html')
 
 @login_required
+def all_posts(request):
+  all_posts = Post.objects.all()
+
+  return render(request, 'posts/all_posts.html', {'all_posts': all_posts})
+
+@login_required
 def posts_index(request):
   posts = Post.objects.filter(user=request.user)
 
