@@ -30,8 +30,8 @@ def about(request):
   return render(request, 'about.html')
 
 def posts_index(request):
-  posts = Post.objects.all()
-
+  posts = Post.objects.filter(user=request.user)
+  
   return render(request, 'posts/index.html', {
     'posts': posts
   })
