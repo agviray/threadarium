@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Post
+from .forms import CommentForm
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -42,8 +43,11 @@ def posts_index(request):
 @login_required
 def posts_detail(request, post_id):
   post = Post.objects.get(id=post_id)
-
-  return render(request, 'posts/detail.html', {'post': post})
+  comment_form = CommentForm()
+  return render(request, 'posts/detail.html', {
+    'post': post,
+    'comment_form': comment_form
+  })
 
 @login_required
 def add_comment(request, post_id): 
