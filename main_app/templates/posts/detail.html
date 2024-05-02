@@ -4,6 +4,7 @@
   <section>
     <h2>{{ post.title }}</h2>
     <p>{{ post.body }}</p>
+    {% if request.user == post.user %}
     <div class="flex gap-4 pt-8">
       <a href="{% url 'post_update' post.id %}"
         ><span class="inline-block py-1 px-4 border border-black">Edit</span></a
@@ -14,6 +15,7 @@
         ></a
       >
     </div>
+    {% endif %}
   </section>
   <section>
     <form action="{% url 'add_comment' post.id %}" method="POST">
