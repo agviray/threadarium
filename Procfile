@@ -1,1 +1,1 @@
-WSGI_APPLICATION = 'threadarium-app.wsgi'
+web: gunicorn threadarium.wsgi
