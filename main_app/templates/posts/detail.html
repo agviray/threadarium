@@ -3,6 +3,7 @@
 <div>
   <section>
     <h2>{{ post.title }}</h2>
+    <span class="inline-block">{{ post.created_on }}</span>
     <p>{{ post.body }}</p>
     {% if request.user == post.user %}
     <div class="flex gap-4 pt-8">
@@ -28,7 +29,10 @@
   </section>
   <section>
     {% for comment in post.comment_set.all %}
-    <p>{{ comment.body }}</p>
+    <article>
+      <span class="inline-block">{{ comment.created_on }}</span>
+      <p>{{ comment.body }}</p>
+    </article>
     {% endfor %}
   </section>
 </div>
