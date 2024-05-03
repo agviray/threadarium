@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Post
 from .forms import CommentForm
@@ -58,12 +58,24 @@ def posts_detail(request, post_id):
 @login_required
 def add_comment(request, post_id): 
   post = Post.objects.get(id=post_id)
-  comment_form = CommentForm()
+
+  if request.method == 'POST':
+    form = CommentForm(request.POST)
+    if form.is_valid():
+      comment = form.save(commit=False)
+      comment.post_id = post_id
+      comment.user_id = request.user.id
+      comment.save()
+      return redirect('detail', post_id=post_id)
+
+  else: 
+    form = CommentForm()
 
   return render(request, 'posts/detail.html', {
     'post': post,
-    'comment_form': comment_form
+    'form': form
   })
+
 class PostCreate(LoginRequiredMixin, CreateView):
   model = Post
   fields = ['title', 'body']

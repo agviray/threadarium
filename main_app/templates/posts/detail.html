@@ -20,11 +20,16 @@
   <section>
     <form action="{% url 'add_comment' post.id %}" method="POST">
       {% csrf_token %}
-      <textarea name="text" id="comment-body" cols="30" rows="10"></textarea>
+      <textarea name="body" id="comment-body" cols="30" rows="10"></textarea>
       <button type="submit" class="inline-block py-1 px-4 border border-black">
         Add Comment
       </button>
     </form>
+  </section>
+  <section>
+    {% for comment in post.comment_set.all %}
+    <p>{{ comment.body }}</p>
+    {% endfor %}
   </section>
 </div>
 
