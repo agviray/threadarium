@@ -1,6 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 
 <section>
+  <h1 class="pb-10 text-center text-3xl md:text-5xl lg:text-6xl">All Posts</h1>
   <div class="flex flex-col gap-8">
     {% for post in all_posts %}
     <a href="{% url 'detail' post.id %}">

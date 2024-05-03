@@ -872,6 +872,22 @@ select {
   padding-top: 4rem;
 }
 
+.pt-10 {
+  padding-top: 2.5rem;
+}
+
+.pt-28 {
+  padding-top: 7rem;
+}
+
+.pb-20 {
+  padding-bottom: 5rem;
+}
+
+.pb-10 {
+  padding-bottom: 2.5rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -911,6 +927,14 @@ select {
 
   .lg\:max-w-5xl {
     max-width: 64rem;
+  }
+
+  .lg\:pt-72 {
+    padding-top: 18rem;
+  }
+
+  .lg\:pt-60 {
+    padding-top: 15rem;
   }
 
   .lg\:text-6xl {

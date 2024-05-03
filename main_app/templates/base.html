@@ -16,7 +16,7 @@
       >
         <div>
           <a href="{% url 'home' %}">
-            <span>LOGO</span>
+            <span>Threadarium</span>
           </a>
         </div>
         <div>
@@ -32,7 +32,7 @@
               <a href="{% url 'all_posts' %}"><span>All Posts</span></a>
             </li>
             <li>
-              <a href="{% url 'index' %}"><span>Posts</span></a>
+              <a href="{% url 'index' %}"><span>My Posts</span></a>
             </li>
             <li>
               <a href="{% url 'post_create' %}"><span>Create Post</span></a>
@@ -58,7 +58,7 @@
   </header>
   <body class="flex flex-col min-h-screen">
     <main
-      class="flex-auto w-full p-4 pt-offsetNavbarHeight lg:max-w-5xl lg:mx-auto"
+      class="pt-28 flex-auto w-full p-4 pt-offsetNavbarHeight lg:max-w-5xl lg:mx-auto"
     >
       {% block content %} {% endblock %}
     </main>
