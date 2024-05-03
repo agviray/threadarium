@@ -31,15 +31,20 @@
     </form>
   </section>
   <section>
-    {% for comment in post.comment_set.all %}
-    <article>
-      <div class="flex flex gap-4">
-        <span class="inline-block">{{ comment.user }}</span> |
-        <span class="inline-block">{{ comment.created_on }}</span>
-      </div>
-      <p>{{ comment.body }}</p>
-    </article>
-    {% endfor %}
+    <div class="flex flex-col gap-4">
+      {% for comment in post.comment_set.all %}
+      <article class="p-6 shadow-md bg-blue-50">
+        <div class="flex flex gap-4">
+          <span class="inline-block text-blue-600">{{ comment.user }}</span>
+          |
+          <span class="inline-block">{{ comment.created_on }}</span>
+        </div>
+        <div class="pt-6">
+          <p>{{ comment.body }}</p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
   </section>
 </div>
 
