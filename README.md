@@ -13,7 +13,7 @@ Threadarium is a forum app that lets users create posts and read posts shared by
 
 ## Getting Started
 
-Check out the site [here]()!
+Check out the site [here](https://threadarium-app-cdb094ef1617.herokuapp.com/)!
 
 Visit Threadarium's [Trello](https://trello.com/b/Szz6rUb1/threadarium) board to view additional details.
 
