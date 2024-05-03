@@ -1,1 +1,1 @@
-WSGI_APPLICATION = 'threadarium.wsgi.application'
+WSGI_APPLICATION = 'threadarium.wsgi'
